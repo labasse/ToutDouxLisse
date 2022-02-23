@@ -33,11 +33,11 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-da\/3tbie8fXTrbrzuJdmIxmtL5ZT2p0shjU3N5CMm74=",
+      "hash": "sha256-6wrrfiAeMJD6GbON2KXgmOcGd05Av\/r89riZiUqYbpM=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-OfPNI7UCQFv8hh2XtlZYzY7d9FFHfPRrmnF6aeXeork=",
+      "hash": "sha256-bYMJXcD\/PpUwxBmsdRppIwhlnXJCXGs47lnMpmmzJAI=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
@@ -97,7 +97,7 @@
       "url": "_framework\/System.Collections.Concurrent.dll"
     },
     {
-      "hash": "sha256-ziI27Cs1rr2ZCfcM2QKLibCi+aRtxXrJGdPo9YLR+zs=",
+      "hash": "sha256-0T2Uh8u3PP8R2pqprzTJe3+J1uRKcDGmClLhumIdWSg=",
       "url": "_framework\/System.Collections.dll"
     },
     {
@@ -137,7 +137,7 @@
       "url": "_framework\/System.Runtime.CompilerServices.Unsafe.dll"
     },
     {
-      "hash": "sha256-xI0vGvBYelHc9HRVxa0sOOMgEQHeQ6X\/wBaMkkEh5rg=",
+      "hash": "sha256-81iexDCA9pGqR4FfMxPdY07tOarFjPHkxlKcKoctdK0=",
       "url": "_framework\/System.Runtime.dll"
     },
     {
@@ -149,15 +149,15 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-YgqoZMaBtF\/DsUqaqIsGNvm6qD6hcKPSTG7Lxh8DM7U=",
+      "hash": "sha256-dj3PswCgQNXncHUizR6jVzfXQuLpIDI3+6bkzEBtN60=",
       "url": "_framework\/ToutDouxLisse.dll"
     },
     {
-      "hash": "sha256-j+jYAGWZb6fDd5zx8RE866kebXNqrSeka62IV+it2Zo=",
-      "url": "ToutDouxLisse.styles.css"
+      "hash": "sha256-jQUNoSzDkn0\/hltQ\/mEV8IHBPuQuREXxjcDvHxNI5dM=",
+      "url": "_framework\/ToutDouxMetier.dll"
     },
     {
-      "hash": "sha256-kfXT+\/7PwnK7UBTMq8\/AX20+soj7u1sV\/U1lCtnmSZI=",
+      "hash": "sha256-Y7gcVEq4Jb0496fQQeVmEf59H6gkZeospIj7E1cbJx4=",
       "url": "css\/app.css"
     },
     {
@@ -217,7 +217,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-D4Uwecjc/pyMOMCSmmUL1iT7RtKh0RrOthG7dD7655c=",
+      "hash": "sha256-ArcQNLpM1V38QzMX/+tT9dKipQqDmkQAYWK4zQuaFP0=",
       "url": "index.html"
     },
     {
@@ -229,5 +229,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "9lzgTwoG"
+  "version": "OLwJZ+Sb"
 };
