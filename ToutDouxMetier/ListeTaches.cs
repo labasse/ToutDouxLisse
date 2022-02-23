@@ -21,6 +21,11 @@
 
             listeTaches.Add(tache.Id, tache);
         }
+        
+        public void TriggerDone(int id)
+        {
+            listeTaches[id].Fait = !listeTaches[id].Fait;
+        }
 
         public void Remove(int id)
         {
