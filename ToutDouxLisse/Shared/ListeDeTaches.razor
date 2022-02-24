@@ -1,0 +1,38 @@
+﻿@using ToutDouxMetier
+
+ <ul class="list-group mb-0">
+    @foreach(var tache in Taches)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
+            <div class="d-flex align-items-center">
+                @if (Editable)
+                {
+                    <label><input class="form-check-input me-2" type="checkbox" aria-label="..." @onchange='_ => ListeCourante.TriggerDone(tache.Id)' />            
+                        <TexteTache Tache=@tache/>
+                    </label>
+                }
+                else
+                {
+                    <TexteTache Tache=@tache/>                
+                }                        
+            </div>
+            @if(Editable)
+            {
+            <a href="javascript: return false" data-mdb-toggle="tooltip" title="Remove item" @onclick="_ => ListeCourante.Remove(tache.Id)">
+                <i class="fas fa-times text-primary"></i>
+            </a>
+            }
+        </li>
+    }
+</ul>
+
+@code {
+    [Parameter]
+    public bool Editable { get; set; } = false;
+
+    [Parameter]
+    public IEnumerable<Tache> Taches { get; set; } = Array.Empty<Tache>();
+
+    [Parameter]
+    public ListeTaches ListeCourante { get; set; }
+}

@@ -1,68 +1,26 @@
 ﻿@page "/"
 @using ToutDouxMetier
-
 @inject IDataContext data
 
-<PageTitle>Index</PageTitle>
+<PageTitle>ToutDouxLisse</PageTitle>
 
-    <div class="card" style="border-radius: 15px;">
+<h1>En retard</h1>
+<div class="card mb-5" style="border-radius: 15px;">
         <div class="card-body p-5">
+        <ListeDeTaches Taches=@TachesEnRetard/>
+        </div>
+    </div>
 
-        <h6 class="mb-3">@Liste.Nom</h6>
-
-        <form onsubmit='javascript:return false'>
-            <div>
-                <input type="text" id="form3" class="form-control form-control-lg" @bind="NouvelIntitule"/>
-                <label class="form-label" for="form3">What do you need to do today?</label>
-            </div>
-            <div>
-                <input type="datetime" class="form-control form-control-lg" @bind="Echeance" @bind:format="g"/>
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary mt-2" @onclick="AddTache">Add</button>  
-            </div>
-        </form>
-
-        <ul class="list-group mb-0">
-
-            @foreach(var tache in Liste.Taches)
-            {
-            <li class="list-group-item d-flex justify-content-between align-items-center border-start-0 border-top-0 border-end-0 border-bottom rounded-0 mb-2">
-            <div class="d-flex align-items-center">
-                <label><input class="form-check-input me-2" type="checkbox" aria-label="..." @onchange='_ => Liste.TriggerDone(tache.Id)' />
-                @if(tache.Fait)
-                {
-                    <s>@tache.Intitule</s>
-                }
-                else
-                {
-                    @tache.Intitule
-                }
-                </label>
-                @if(tache.Echeance.HasValue)
-                {
-                    <span class="badge bg-secondary ms-3">@tache.Echeance.Value.ToString("g")</span>
-                }                        
-            </div>
-            <a href="#!" data-mdb-toggle="tooltip" title="Remove item" @onclick="_ => Liste.Remove(tache.Id)">
-                <i class="fas fa-times text-primary"></i>
-            </a>
-            </li>
-            }
-        </ul>
-
+<h1>Les 5 prochaines échéances</h1>
+<div class="card" style="border-radius: 15px;">
+        <div class="card-body p-5">
+         <!--ListeDeTaches Taches=@Taches5Prochaines/-->
         </div>
     </div>
 
 @code {
-    private string NouvelIntitule { get; set; } = "";
-    private DateTime? Echeance { get; set; } = DateTime.Now;
-    private ListeTaches Liste => data.Listes.First();
-
-    private void AddTache()
-    {
-        Liste.Add(NouvelIntitule).Echeance = Echeance;
-        NouvelIntitule = "";
-        Echeance = DateTime.Now;
-    }
+    public IEnumerable<Tache> TachesEnRetard
+            => data.Taches
+                .Where(t => !t.Fait && t.Echeance.HasValue && t.Echeance.Value < DateTime.Now)
+                .OrderBy(t => t.Echeance);
 }

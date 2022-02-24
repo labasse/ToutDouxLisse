@@ -1,0 +1,21 @@
+﻿@using ToutDouxMetier
+
+@if(Tache!=null)
+{
+    @if(Tache.Fait)
+    {
+        <s>@Tache.Intitule</s>
+    }
+    else
+    {
+        @Tache.Intitule
+    }
+    @if(Tache.Echeance.HasValue)
+    {
+        <span class="badge bg-secondary ms-3">@Tache.Echeance.Value.ToString("g")</span>
+    }
+}
+@code {
+    [Parameter]
+    public Tache? Tache { get; set; }
+}

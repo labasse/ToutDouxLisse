@@ -1,7 +1,42 @@
 ﻿@page "/liste"
+@using ToutDouxMetier
 
-<h3>Liste</h3>
+@inject IDataContext data
+
+<PageTitle>ToutDouxLisse - Liste</PageTitle>
+
+    <div class="card" style="border-radius: 15px;">
+        <div class="card-body p-5">
+
+        <h6 class="mb-3">@ListeCourante.Nom</h6>
+
+        <form onsubmit='javascript:return false'>
+            <div>
+                <input type="text" id="form3" class="form-control form-control-lg" @bind="NouvelIntitule"/>
+                <label class="form-label" for="form3">What do you need to do today?</label>
+            </div>
+            <div>
+                <input type="datetime" class="form-control form-control-lg" @bind="Echeance" @bind:format="g"/>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary mt-2" @onclick="AddTache">Add</button>  
+            </div>
+        </form>
+
+       <ListeDeTaches Editable=true Taches=@ListeCourante.Taches ListeCourante=@ListeCourante/>
+
+        </div>
+    </div>
 
 @code {
+    private string NouvelIntitule { get; set; } = "";
+    private DateTime? Echeance { get; set; } = DateTime.Now;
+    private ListeTaches ListeCourante => data.Listes.First();
 
+    private void AddTache()
+    {
+        ListeCourante.Add(NouvelIntitule).Echeance = Echeance;
+        NouvelIntitule = "";
+        Echeance = DateTime.Now;
+    }
 }
