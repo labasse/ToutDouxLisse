@@ -1,19 +1,26 @@
 ﻿@page "/"
 @using ToutDouxMetier
 
+@inject IDataContext data
+
 <PageTitle>Index</PageTitle>
 
     <div class="card" style="border-radius: 15px;">
         <div class="card-body p-5">
 
-        <h6 class="mb-3">Awesome Todo List</h6>
+        <h6 class="mb-3">@Liste.Nom</h6>
 
-        <form class="d-flex justify-content-center align-items-center mb-4" onsubmit='javascript:return false'>
-            <div class="form-outline flex-fill">
-            <input type="text" id="form3" class="form-control form-control-lg" @bind="NouvelIntitule"/>
-            <label class="form-label" for="form3">What do you need to do today?</label>
+        <form onsubmit='javascript:return false'>
+            <div>
+                <input type="text" id="form3" class="form-control form-control-lg" @bind="NouvelIntitule"/>
+                <label class="form-label" for="form3">What do you need to do today?</label>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg ms-2" @onclick="AddTache">Add</button>
+            <div>
+                <input type="datetime" class="form-control form-control-lg" @bind="Echeance" @bind:format="g"/>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary mt-2" @onclick="AddTache">Add</button>  
+            </div>
         </form>
 
         <ul class="list-group mb-0">
@@ -32,6 +39,10 @@
                     @tache.Intitule
                 }
                 </label>
+                @if(tache.Echeance.HasValue)
+                {
+                    <span class="badge bg-secondary ms-3">@tache.Echeance.Value.ToString("g")</span>
+                }                        
             </div>
             <a href="#!" data-mdb-toggle="tooltip" title="Remove item" @onclick="_ => Liste.Remove(tache.Id)">
                 <i class="fas fa-times text-primary"></i>
@@ -44,19 +55,14 @@
     </div>
 
 @code {
-    private ListeTaches Liste = new ListeTaches(
-        "Cras justo odio",
-        "Dapibus ac facilisis in",
-        "Morbi leo risus",
-        "Porta ac consectetur ac",
-        "Vestibulum at eros",
-        "Morbi leo risus"
-    );
-    private string NouvelIntitule { get; set; }
+    private string NouvelIntitule { get; set; } = "";
+    private DateTime? Echeance { get; set; } = DateTime.Now;
+    private ListeTaches Liste => data.Listes.First();
 
     private void AddTache()
     {
-        Liste.Add(NouvelIntitule);
+        Liste.Add(NouvelIntitule).Echeance = Echeance;
         NouvelIntitule = "";
+        Echeance = DateTime.Now;
     }
 }

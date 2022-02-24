@@ -5,13 +5,14 @@
     /// </summary>
     public class Tache
     {
-        public Tache(int id, string intitule)
+        public Tache(string intitule)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Intitule = intitule;
         }
-        public int Id { get; private init; }
+        public Guid Id { get; private init; }
         public bool Fait { get; set; }
         public string Intitule { get; set; }
+        public DateTime? Echeance { get; set; } = null;
     }
 }
