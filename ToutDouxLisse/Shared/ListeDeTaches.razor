@@ -1,5 +1,6 @@
 ﻿@using ToutDouxMetier
-
+ @if(Taches.Any())
+ {
  <ul class="list-group mb-0">
     @foreach(var tache in Taches)
     {
@@ -24,8 +25,12 @@
             }
         </li>
     }
-</ul>
-
+    </ul>
+}
+else
+{
+    <p>Aucune tâche.</p>
+}
 @code {
     [Parameter]
     public bool Editable { get; set; } = false;

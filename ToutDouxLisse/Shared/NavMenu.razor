@@ -1,4 +1,8 @@
-﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
+﻿@using ToutDouxMetier
+@inject IDataContext data
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,10 +15,23 @@
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
         </li>
-        <li class="nav-item">
-            <NavLink class="nav-link" href="liste">
-                <span class="oi oi-list" aria-hidden="true"></span> To-Do
-            </NavLink>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Listes
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><form class="d-flex ms-1 me-1" onsubmit='javascript:return false'>
+                <input class="form-control me-1" type="text" placeholder="Nouvelle" >
+                <button class="btn btn-primary" type="button" @onclick="AjouterListe">+</button>
+              </form></li>
+            <li><hr class="dropdown-divider"></li>
+@foreach(var l in data.Listes) 
+{
+            <li><NavLink class="nav-link" href="liste" >
+                @l.Nom
+            </NavLink></li>
+}
+          </ul>
         </li>
         <li class="nav-item">
             <NavLink class="nav-link" href="counter">
@@ -41,5 +58,10 @@
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+    
+    private void AjouterListe()
+    {
+        
     }
 }
