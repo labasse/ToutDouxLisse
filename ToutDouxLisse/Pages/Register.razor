@@ -1,0 +1,38 @@
+﻿@page "/register"
+@using ToutDouxMetier
+
+<Cadre Titre="Inscription">
+    <Contenu>
+        <EditForm Model="Courant" >
+            <div>
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+            </div>
+            <div class="form-group">
+                <label class='form-label'>Nom 
+                <InputText class="form-control" @bind-Value="@Courant.Nom" />
+                </label>
+            </div>
+            <div class="form-group">
+                <label class='form-label'>Prénom <InputText class='form-control' @bind-Value="@Courant.Prenom" /></label>
+            </div>
+            <div class="form-group">
+                <label class='form-label'>Date de naissance <InputDate class='form-control' @bind-Value="@Courant.DateDeNaissance" /></label>
+            </div>
+             <div class="form-group">
+                <label class='form-label'>Mot de passe <InputText type="password" class='form-control' @bind-Value="@Courant.MotDePasse" /></label>
+            </div>
+             <div class="form-group">
+                <label class='form-label'>Confirmation du mot de passe <InputText type="password" class='form-control' @bind-Value="@Courant.ConfirmationMotDePasse" /></label>
+            </div>
+            <div class="form-check">
+                <label class='form-label'><InputCheckbox @bind-Value="@Courant.ConsentementProspect" class="form-check-input"/> Recevoir des propositions des partenaires</label>
+            </div>
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+            </EditForm>
+    </Contenu>
+</Cadre>
+
+@code {
+    public Utilisateur Courant { get; set; } = new Utilisateur();
+}
