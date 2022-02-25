@@ -1,6 +1,7 @@
 ﻿@using ToutDouxMetier
-@inject IDataContext data
 
+@inject IDataContext data
+@inject NavigationManager nav
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
@@ -68,7 +69,9 @@
     private void AjouterListe()
     {
         var nouv = new ListeTaches(NomNouvelleListe);
-        
+
         data.Add(nouv);
+        NomNouvelleListe = "";
+        nav.NavigateTo(UrlListe(data.Listes.Count()-1));
     }
 }
