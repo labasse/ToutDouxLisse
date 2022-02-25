@@ -8,7 +8,7 @@
             <div class="d-flex align-items-center">
                 @if (Editable)
                 {
-                    <label><input class="form-check-input me-2" type="checkbox" aria-label="..." @onchange='_ => ListeCourante.TriggerDone(tache.Id)' />            
+                    <label><input class="form-check-input me-2" type="checkbox" aria-label="..." @bind="tache.Fait" />            
                         <TexteTache Tache=@tache/>
                     </label>
                 }

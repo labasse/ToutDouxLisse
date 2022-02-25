@@ -1,6 +1,7 @@
-﻿@page "/liste"
+﻿@page "/liste/{Id:int}"
 @using ToutDouxMetier
 
+@inject NavigationManager nav
 @inject IDataContext data
 
 <PageTitle>ToutDouxLisse - Liste</PageTitle>
@@ -22,17 +23,29 @@
                 <button type="button" class="btn btn-primary mt-2" @onclick="AddTache">Add</button>  
             </div>
         </form>
-
        <ListeDeTaches Editable=true Taches=@ListeCourante.Taches ListeCourante=@ListeCourante/>
-
         </div>
     </div>
 
 @code {
+    [Parameter]
+    public int Id { get; set; }
+
     private string NouvelIntitule { get; set; } = "";
     private DateTime? Echeance { get; set; } = DateTime.Now;
-    private ListeTaches ListeCourante => data.Listes.First();
+    private ListeTaches ListeCourante { get; set; }
 
+    protected override void OnParametersSet()
+    {
+        if(Id<0 || Id >= data.Listes.Count())
+        {
+            nav.NavigateTo("404");
+        }
+        else
+        {
+            ListeCourante = data.Listes.ElementAt(Id);
+        }
+    }
     private void AddTache()
     {
         ListeCourante.Add(NouvelIntitule).Echeance = Echeance;
