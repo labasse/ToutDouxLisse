@@ -5,18 +5,18 @@
 <PageTitle>ToutDouxLisse</PageTitle>
 
 <h1>En retard</h1>
-<div class="card mb-5" style="border-radius: 15px;">
-        <div class="card-body p-5">
+<Cadre>
+    <Contenu>
         <ListeDeTaches Taches=@TachesEnRetard/>
-        </div>
-    </div>
-
+    </Contenu>
+</Cadre>
+        
 <h1>Les 5 prochaines échéances</h1>
-<div class="card" style="border-radius: 15px;">
-        <div class="card-body p-5">
-         <ListeDeTaches Taches=@Taches5Prochaines/>
-        </div>
-    </div>
+<Cadre Titre="Pensez à les traiter">
+    <Contenu>
+             <ListeDeTaches Taches=@Taches5Prochaines/>
+    </Contenu>
+</Cadre>
 
 @code {
     public IEnumerable<Tache> TachesEnRetard

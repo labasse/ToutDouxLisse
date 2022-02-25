@@ -6,7 +6,11 @@
     <NotFound>
         <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Oups, ya rien ici.</p>
+            <Cadre Titre="Introuvable">
+                <Contenu>
+                    <p role="alert">Oups, ya rien ici.</p>
+                </Contenu>
+            </Cadre>
         </LayoutView>
     </NotFound>
 </Router>

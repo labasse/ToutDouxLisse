@@ -1,0 +1,5 @@
+﻿section#main-content {
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('../img/bg.jpg');
+}
