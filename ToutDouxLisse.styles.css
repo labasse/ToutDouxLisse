@@ -1,0 +1,6 @@
+/* /Shared/MainLayout.razor.rz.scp.css */
+section#main-content[b-5x8lznrwbk] {
+    background-size: cover;
+    background-attachment: fixed;
+    background-image: url('../img/bg.jpg');
+}

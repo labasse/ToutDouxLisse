@@ -33,11 +33,11 @@
       "url": "_framework\/icudt.dat"
     },
     {
-      "hash": "sha256-eUO7y42LTJym\/id5guAiIZ57zV04qDMYzTCYDBoYtEA=",
+      "hash": "sha256-M\/OpjjoZq2iJdvqJgbhDKwFk5+tJJvA7ZLdHKb8U5bs=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-Lve6U\/ki5di5FpCmVVs11OyNhbkcmKtPm9wm2L272ek=",
+      "hash": "sha256-Ski5lzNlFIhZHfdXbbHGZIjv1gXlmS2uKOUoIjCauqM=",
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
@@ -153,7 +153,7 @@
       "url": "_framework\/System.Text.Json.dll"
     },
     {
-      "hash": "sha256-\/QRs7JBLlMgeQYKCvH3\/cXcqlI4ZSDsAvq\/opHv1nvQ=",
+      "hash": "sha256-U16\/LkzGJIIgrtbwinAUt\/0sqNGQ1sDxwZj8aSX3yBs=",
       "url": "_framework\/ToutDouxLisse.dll"
     },
     {
@@ -161,7 +161,11 @@
       "url": "_framework\/ToutDouxMetier.dll"
     },
     {
-      "hash": "sha256-QJd\/fes3PxCmT5DN6p3SFoJf\/zbZobfnOdUkbYufIN0=",
+      "hash": "sha256-6PwZKKDDDtFyu2Fd7vQvBS4clYZ+r8j6LimsPyqBjwI=",
+      "url": "ToutDouxLisse.styles.css"
+    },
+    {
+      "hash": "sha256-p50ZeDchc30rgapnNADcVTMbGjjS76kMZK1bxMMnaMQ=",
       "url": "css\/app.css"
     },
     {
@@ -225,7 +229,7 @@
       "url": "img\/bg.jpg"
     },
     {
-      "hash": "sha256-9SbMVEQDCVVc/KOPDvdcC4hL7CAmOUlgJSTFMhdblXA=",
+      "hash": "sha256-LiasszLJGprX+jiX6LYd3dJOmcG9Lqr22l2AmfZ/t0M=",
       "url": "index.html"
     },
     {
@@ -237,5 +241,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "P09R8C1q"
+  "version": "p\/U8cEao"
 };
