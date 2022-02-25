@@ -1,3 +1,21 @@
+/* /Pages/Register.razor.rz.scp.css */
+.toto[b-s7yj9wg3qa] {
+
+}
+
+[b-s7yj9wg3qa] .validation-errors {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: .25rem;
+}
+
+[b-s7yj9wg3qa] .validation-errors li {
+    list-style-type: none;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 section#main-content[b-5x8lznrwbk] {
     background-size: cover;
