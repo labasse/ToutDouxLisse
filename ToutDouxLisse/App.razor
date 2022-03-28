@@ -3,6 +3,9 @@
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="input[type=text]" />
     </Found>
+    <Navigating>
+        <p>Please wait.</p>
+    </Navigating>
     <NotFound>
         <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
